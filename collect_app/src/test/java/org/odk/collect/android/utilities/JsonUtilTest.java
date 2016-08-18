@@ -50,7 +50,7 @@ public class JsonUtilTest {
     expected.put("Description", "My room.");
 
     String geotaggerXml = getGeoTaggerTestXml();
-    Map<String, Object> actual = jsonUtil.getXmlAsMap(geotaggerXml);
+    Map<String, Object> actual = jsonUtil.getXmlAsMap(geotaggerXml, "geotagger");
 
     assertThat(actual).isEqualTo(expected);
   }
