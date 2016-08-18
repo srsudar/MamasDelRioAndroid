@@ -57,7 +57,7 @@ public class JsonUtilTest {
 
   private String getGeoTaggerTestXml() throws IOException {
     Context context = RuntimeEnvironment.application;
-    int resId = R.xml.test_form;
+    int resId = R.raw.test_form;
     String result = resourceHelper.getResourceFileAsString(context, resId);
     return result;
   }

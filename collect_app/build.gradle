@@ -24,7 +24,7 @@ android {
     defaultConfig {
         applicationId("org.odk.collect.android")
         minSdkVersion(9)
-        targetSdkVersion(9)
+        targetSdkVersion(21)
         versionCode(1061)
         versionName("1.4.10")
     }
