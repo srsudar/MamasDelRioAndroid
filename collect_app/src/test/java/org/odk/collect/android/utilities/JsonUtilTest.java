@@ -40,7 +40,7 @@ public class JsonUtilTest {
   }
 
   @Test
-  public void parseBasicXmlAsMap() throws IOException {
+  public void parseBasicXmlAsMap() throws Exception {
     // Dead simple, resource-free, XML form one level deep.
     // These keys and values are taken from res/xml/test_form.xml.
     Map<String, Object> expected = new HashMap<>();
@@ -50,8 +50,16 @@ public class JsonUtilTest {
     expected.put("Description", "My room.");
 
     String geotaggerXml = getGeoTaggerTestXml();
-    Map<String, Object> actual = jsonUtil.getXmlAsMap(geotaggerXml, "geotagger");
+    Map<String, Object> actual = jsonUtil.getXmlAsMap(geotaggerXml);
 
+    assertThat(actual).isEqualTo(expected);
+  }
+
+  @Test
+  public void getRootElementWorksForGeopoint() throws Exception {
+    String xml = getGeoTaggerTestXml();
+    String expected = "geotagger";
+    String actual = jsonUtil.getRootElement(xml);
     assertThat(actual).isEqualTo(expected);
   }
 
