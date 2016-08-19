@@ -1,26 +1,20 @@
 package org.odk.collect.android.utilities;
 
 import android.content.Context;
-import android.os.Bundle;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.odk.collect.android.BuildConfig;
-import org.odk.collect.android.R;
+import org.odk.collect.android.testutil.ResourceProvider;
 import org.odk.collect.android.testutil.TestResourceHelper;
-import org.odk.collect.android.utilities.JsonUtil;
-import org.robolectric.Robolectric;
 import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
-import java.io.IOError;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.assertj.android.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -32,42 +26,59 @@ public class JsonUtilTest {
 
   JsonUtil jsonUtil;
   TestResourceHelper resourceHelper;
+  Context context;
 
   @Before
   public void before() {
     jsonUtil = new JsonUtil();
     resourceHelper = new TestResourceHelper();
+    context = RuntimeEnvironment.application;
   }
 
   @Test
-  public void parseBasicXmlAsMap() throws Exception {
+  public void parseGeotaggerAsMap() throws Exception {
     // Dead simple, resource-free, XML form one level deep.
-    // These keys and values are taken from res/xml/test_form.xml.
+    // These keys and values are taken from res/raw/form_geotagger.xml.
     Map<String, Object> expected = new HashMap<>();
     expected.put("DeviceId", "867979021299992");
     expected.put("Image", "1471488787354.jpg");
     expected.put("Location", "47.65845414 -122.31286083 25.0 12.0");
     expected.put("Description", "My room.");
 
-    String geotaggerXml = getGeoTaggerTestXml();
+    String geotaggerXml = ResourceProvider.getGeoTaggerXml(context);
     Map<String, Object> actual = jsonUtil.getXmlAsMap(geotaggerXml);
 
     assertThat(actual).isEqualTo(expected);
   }
 
   @Test
+  public void parseWidgetsAsXml() throws Exception {
+    // This is an attempt to get more types of prompt answers from the XML.
+    // They are taken from res/raw/form_widgets.xml.
+    Map<String, Object> expected = new HashMap<>();
+    expected.put("start", "2016-08-18T19:18:46.922-07");
+    expected.put("deviceid", "867979021299992");
+    expected.put("string", "string value");
+    expected.put("int", "9");
+    expected.put("decimal", "18.31");
+    expected.put("date", "2018-06-15");
+    expected.put("select", "a d");
+    expected.put("select1", "3");
+    expected.put("regex", "test@test.com");
+    expected.put("leftblank", "");
+    expected.put("geopoint", "47.65830366 -122.31297098 121.0 16.0");
+
+    String widgetXml = ResourceProvider.getWidgetsXml(context);
+    Map<String, Object> actual = jsonUtil.getXmlAsMap(widgetXml);
+
+    assertThat(actual).isEqualTo(expected);
+  }
+
+  @Test
   public void getRootElementWorksForGeopoint() throws Exception {
-    String xml = getGeoTaggerTestXml();
+    String xml = ResourceProvider.getGeoTaggerXml(context);
     String expected = "geotagger";
     String actual = jsonUtil.getRootElement(xml);
     assertThat(actual).isEqualTo(expected);
   }
-
-  private String getGeoTaggerTestXml() throws IOException {
-    Context context = RuntimeEnvironment.application;
-    int resId = R.raw.test_form;
-    String result = resourceHelper.getResourceFileAsString(context, resId);
-    return result;
-  }
-
 }
