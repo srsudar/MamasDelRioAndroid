@@ -2,27 +2,21 @@ package org.odk.collect.android.utilities;
 
 import android.util.Log;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.converters.Converter;
-import com.thoughtworks.xstream.converters.MarshallingContext;
-import com.thoughtworks.xstream.converters.UnmarshallingContext;
-import com.thoughtworks.xstream.io.HierarchicalStreamReader;
-import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
-import com.thoughtworks.xstream.io.xml.DomDriver;
-
 import org.w3c.dom.Document;
+import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParserFactory;
 
 /**
  * Created by sudars on 8/17/16.
@@ -30,18 +24,55 @@ import javax.xml.parsers.ParserConfigurationException;
 public class JsonUtil {
   private static final String TAG = JsonUtil.class.getSimpleName();
 
-  private DomDriver domDriver;
   private DocumentBuilderFactory builderFactory;
   private DocumentBuilder builder;
 
   public JsonUtil() {
-    this.domDriver = new DomDriver();
     builderFactory =
         DocumentBuilderFactory.newInstance();
     try {
       builder = builderFactory.newDocumentBuilder();
     } catch (ParserConfigurationException e) {
       Log.e(TAG, "parser config exception", e);
+    }
+  }
+
+  public Map<String, String> parse(InputSource inputSource) throws SAXException, IOException, ParserConfigurationException {
+    final DataCollector handler = new DataCollector();
+    SAXParserFactory.newInstance().newSAXParser().parse(inputSource, handler);
+    return handler.result;
+  }
+
+  /**
+   * Taken from:
+   * https://stackoverflow.com/questions/1537207/how-to-convert-xml-to-java-util-map-and-vice-versa
+   */
+  private static class DataCollector extends DefaultHandler {
+    private final StringBuilder buffer = new StringBuilder();
+    private final Map<String, String> result = new HashMap<String, String>();
+    private boolean foundRoot = false;
+    private String rootName = null;
+
+    @Override
+    public void startElement(String uri, String localName, String qName, Attributes attributes) {
+      if (!foundRoot) {
+        rootName = qName;
+        foundRoot = true;
+      }
+    }
+
+    @Override
+    public void endElement(String uri, String localName, String qName) throws SAXException {
+      final String value = buffer.toString().trim();
+      if (!qName.equals(rootName)) {
+        result.put(qName, value);
+      }
+      buffer.setLength(0);
+    }
+
+    @Override
+    public void characters(char[] ch, int start, int length) throws SAXException {
+      buffer.append(ch, start, length);
     }
   }
 
@@ -53,15 +84,9 @@ public class JsonUtil {
    * @param xml
    * @return
    */
-  public Map<String, Object> getXmlAsMap(String xml) {
-    XStream xStream = new XStream(this.domDriver);
+  public Map<String, String> getXmlAsMap(String xml) throws ParserConfigurationException, SAXException, IOException {
 
-    String rootElement = this.getRootElement(xml);
-
-    xStream.alias(rootElement, java.util.Map.class);
-    xStream.registerConverter(new MapEntryConverter());
-    Map<String, Object> result = (Map<String,Object>) xStream.fromXML(xml);
-    return result;
+    return parse(new InputSource(new StringReader(xml)));
   }
 
   public String getRootElement(String xml) {
@@ -79,42 +104,5 @@ public class JsonUtil {
       Log.e(TAG, "SAXException getting root element", e);
     }
     return result;
-  }
-
-  /**
-   * Taken from:
-   * https://stackoverflow.com/questions/1537207/how-to-convert-xml-to-java-util-map-and-vice-versa
-   */
-  public static class MapEntryConverter implements Converter {
-    public boolean canConvert(Class clazz) {
-      return AbstractMap.class.isAssignableFrom(clazz);
-    }
-
-    public void marshal(Object value, HierarchicalStreamWriter writer, MarshallingContext context) {
-      AbstractMap map = (AbstractMap) value;
-      for (Object obj : map.entrySet()) {
-        Map.Entry entry = (Map.Entry) obj;
-        writer.startNode(entry.getKey().toString());
-        Object val = entry.getValue();
-        if (null != val) {
-          writer.setValue(val.toString());
-        }
-        writer.endNode();
-      }
-    }
-
-    public Object unmarshal(HierarchicalStreamReader reader, UnmarshallingContext context) {
-      Map<String, String> map = new HashMap<String, String>();
-      while (reader.hasMoreChildren()) {
-        reader.moveDown();
-
-        String key = reader.getNodeName(); // nodeName aka element's name
-        String value = reader.getValue();
-        map.put(key, value);
-
-        reader.moveUp();
-      }
-      return map;
-    }
   }
 }

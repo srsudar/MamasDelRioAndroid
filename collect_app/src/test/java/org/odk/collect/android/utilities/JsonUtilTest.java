@@ -39,14 +39,14 @@ public class JsonUtilTest {
   public void parseGeotaggerAsMap() throws Exception {
     // Dead simple, resource-free, XML form one level deep.
     // These keys and values are taken from res/raw/form_geotagger.xml.
-    Map<String, Object> expected = new HashMap<>();
+    Map<String, String> expected = new HashMap<>();
     expected.put("DeviceId", "867979021299992");
     expected.put("Image", "1471488787354.jpg");
     expected.put("Location", "47.65845414 -122.31286083 25.0 12.0");
     expected.put("Description", "My room.");
 
     String geotaggerXml = ResourceProvider.getGeoTaggerXml(context);
-    Map<String, Object> actual = jsonUtil.getXmlAsMap(geotaggerXml);
+    Map<String, String> actual = jsonUtil.getXmlAsMap(geotaggerXml);
 
     assertThat(actual).isEqualTo(expected);
   }
@@ -69,7 +69,7 @@ public class JsonUtilTest {
     expected.put("geopoint", "47.65830366 -122.31297098 121.0 16.0");
 
     String widgetXml = ResourceProvider.getWidgetsXml(context);
-    Map<String, Object> actual = jsonUtil.getXmlAsMap(widgetXml);
+    Map<String, String> actual = jsonUtil.getXmlAsMap(widgetXml);
 
     assertThat(actual).isEqualTo(expected);
   }
