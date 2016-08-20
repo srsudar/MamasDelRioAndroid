@@ -8,6 +8,7 @@ import org.odk.collect.android.BuildConfig;
 public class Constants {
   public static final String WHATSAPP_PACKAGE = "com.whatsapp";
   public static final String TEXT_MESSAGE_MIME_TYPE = "text/plain";
+  public static final String UTF8 = "UTF-8";
 
   public static final int NUM_MONTH_IN_PREGNANCY = 9;
 

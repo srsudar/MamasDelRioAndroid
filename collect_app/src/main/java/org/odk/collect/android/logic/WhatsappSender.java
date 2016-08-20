@@ -40,7 +40,7 @@ public class WhatsappSender {
     return sendIntent;
   }
 
-  public void sendMessage(Activity activity) {
+  public void sendMessage(Activity activity, String message) {
     Map<String, Object> map = new HashMap<>();
     Gson gson = new Gson();
     String jsonMessage = gson.toJson(map);
@@ -49,7 +49,7 @@ public class WhatsappSender {
         Constants.MSG_DELIMITER +
         jsonMessage;
 
-    Intent intent = getShareIntent(msg);
+    Intent intent = getShareIntent(message);
     activity.startActivityForResult(intent,
         Constants.RequestCodes.SEND_TO_WHATSAPP);
   }

@@ -13,6 +13,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.app.Activity;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,6 +35,8 @@ import java.util.ArrayList;
  */
 public class InstanceUploaderWhatsapp extends ListActivity implements
     View.OnLongClickListener {
+  private static final String TAG =
+      InstanceUploaderWhatsapp.class.getSimpleName();
 
   private static final String BUNDLE_SELECTED_ITEMS_KEY = "selected_items";
   private static final String BUNDLE_TOGGLED_KEY = "toggled";
@@ -109,51 +112,8 @@ public class InstanceUploaderWhatsapp extends ListActivity implements
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_instance_uploader_whatsapp);
 
-    // set up long click listener
-
     mUploadButton = (Button) findViewById(R.id.button_send_whatsapp);
     attachListeners();
-//    mUploadButton.setOnClickListener(new View.OnClickListener() {
-//
-//      @Override
-//      public void onClick(View arg0) {
-//        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-//        NetworkInfo ni = connectivityManager.getActiveNetworkInfo();
-//
-//        if (NetworkReceiver.running == true) {
-//          Toast.makeText(
-//              InstanceUploaderList.this,
-//              R.string.send_in_progress,
-//              Toast.LENGTH_SHORT).show();
-//        } else if (ni == null || !ni.isConnected()) {
-//          Collect.getInstance().getActivityLogger()
-//              .logAction(this, "uploadButton", "noConnection");
-//
-//          Toast.makeText(InstanceUploaderList.this,
-//              R.string.no_connection, Toast.LENGTH_SHORT).show();
-//        } else {
-//          Collect.getInstance()
-//              .getActivityLogger()
-//              .logAction(this, "uploadButton",
-//                  Integer.toString(mSelected.size()));
-//
-//          if (mSelected.size() > 0) {
-//            // items selected
-//            uploadSelectedFiles();
-//            mToggled = false;
-//            mSelected.clear();
-//            InstanceUploaderList.this.getListView().clearChoices();
-//            mUploadButton.setEnabled(false);
-//          } else {
-//            // no items selected
-//            Toast.makeText(getApplicationContext(),
-//                getString(R.string.noselect_error),
-//                Toast.LENGTH_SHORT).show();
-//          }
-//        }
-//      }
-//    });
-
 
     Cursor c = mShowUnsent ? getUnsentCursor() : getAllCursor();
 
@@ -210,28 +170,13 @@ public class InstanceUploaderWhatsapp extends ListActivity implements
     for (int i = 0; i < mSelected.size(); i++) {
       instanceIDs[i] = mSelected.get(i);
     }
-
-    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-    String server = prefs.getString(PreferencesActivity.KEY_PROTOCOL, null);
-    if (server.equalsIgnoreCase(getString(R.string.protocol_google_sheets))) {
-      // if it's Sheets, start the Sheets uploader
-      // first make sure we have a google account selected
-
-      String googleUsername = prefs.getString(
-          PreferencesActivity.KEY_SELECTED_GOOGLE_ACCOUNT, null);
-      if (googleUsername == null || googleUsername.equals("")) {
-        showDialog(GOOGLE_USER_DIALOG);
-        return;
-      }
-      Intent i = new Intent(this, GoogleSheetsUploaderActivity.class);
-      i.putExtra(FormEntryActivity.KEY_INSTANCES, instanceIDs);
-      startActivityForResult(i, INSTANCE_UPLOADER);
-    } else {
-      // otherwise, do the normal agregate/other thing.
-      Intent i = new Intent(this, InstanceUploaderActivity.class);
-      i.putExtra(FormEntryActivity.KEY_INSTANCES, instanceIDs);
-      startActivityForResult(i, INSTANCE_UPLOADER);
+    if (instanceIDs.length > 1) {
+      Log.e(TAG, "more than one instance found, should only be 1");
     }
+
+    Intent i = new Intent(this, InstanceSenderWhatsappActivity.class);
+    i.putExtra(FormEntryActivity.KEY_INSTANCES, instanceIDs);
+    startActivityForResult(i, INSTANCE_UPLOADER);
   }
 
   @Override

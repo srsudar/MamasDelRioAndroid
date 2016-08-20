@@ -406,4 +406,7 @@
   <string name="title_activity_instance_uploader_whatsapp">
     InstanceUploaderWhatsapp
   </string>
+  <string name="title_activity_instance_sender_whatsapp">
+    InstanceSenderWhatsapp
+  </string>
 </resources>
