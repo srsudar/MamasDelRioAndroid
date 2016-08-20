@@ -2,19 +2,7 @@
  GRADLE CONFIG
  *************************************************************************************************/
 
-if ((new File(gradle.local)).exists()) {
-    apply from: gradle.local
-} else {
-    apply from: gradle.remote
-}
-
-applicationScripts.each {
-    apply from: it
-}
-
 apply plugin: 'com.android.application'
-
-com.android.ddmlib.DdmPreferences.setTimeOut(60000)
 
 android {
     // The following are set in the common.gradle file
@@ -22,64 +10,25 @@ android {
     buildToolsVersion('23.0.3')
 
     defaultConfig {
-        applicationId("org.odk.collect.android")
+        applicationId("org.mamasdelrio.android")
         minSdkVersion(9)
         targetSdkVersion(21)
         versionCode(1061)
         versionName("1.4.10")
     }
 
-    productFlavors {
-        demo {
-        }
-
-        master {
-        }
-
-        snapshot {
-        }
-
-        uitest {
-        }
-    }
-
-    signingConfigs {
-        release {
-            if (shouldSign) {
-                storeFile file(signStoreFilePath)
-                storePassword signStorePass
-                keyAlias signKeyAlias
-                keyPassword signKeyPass
-            }
-        }
-    }
-
     buildTypes {
         release {
-            minifyEnabled(minify)
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-
-            if (shouldSign) {
-                signingConfig signingConfigs.release
-            }
         }
         debug {
             debuggable(true)
-            testCoverageEnabled(testCoverage) // Allows AndroidTest JaCoCo reports to be generated
         }
     }
 
-    packagingOptions { // Pick first occurrence of any files that cause conflicts, as defined in common.gradle
-        packageList.each {
-            pickFirst it
-        }
-
+    packagingOptions {
         pickFirst 'META-INF/services/org.xmlpull.v1.XmlPullParserFactory'
-    }
-
-    compileOptions {
-        sourceCompatibility javaVersion
-        targetCompatibility javaVersion
     }
 }
 
