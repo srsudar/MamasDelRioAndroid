@@ -16,6 +16,7 @@
 	<string translatable="false" name="default_server_url">https://opendatakit.appspot.com</string>
 	<string translatable="false" name="default_odk_formlist">/formList</string>
 	<string translatable="false" name="default_odk_submission">/submission</string>
+	<string translatable="false" name="app_full_name">Mamás del Río</string>
     <item name="mapview" type="id"/>
 	<string translatable="false" name="app_url">http://www.mamasdelrio.org/</string>
 </resources>
