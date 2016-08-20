@@ -348,6 +348,10 @@ public class InstanceSenderWhatsappActivity extends Activity implements
 
     sender.sendMessage(this, sender.toString());
 
+    // Update the data layer to show that we've submitted the form. Unlike the
+    // normal Collect process, we can't receive anything from Whatsapp to say
+    // whether or not it was sent successfully, so we'll just always mark it as
+    // successfully sent if we parsed the file and sent the message.
 //    Collect.getInstance().getContentResolver()
 //        .update(toUpdate, contentValues, null, null);
     this.finish();

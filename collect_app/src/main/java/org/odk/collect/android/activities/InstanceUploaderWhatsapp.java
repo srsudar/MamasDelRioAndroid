@@ -3,16 +3,10 @@ package org.odk.collect.android.activities;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.app.Activity;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,6 +34,13 @@ public class InstanceUploaderWhatsapp extends ListActivity implements
 
   private static final String BUNDLE_SELECTED_ITEMS_KEY = "selected_items";
   private static final String BUNDLE_TOGGLED_KEY = "toggled";
+  /**
+   * True to indicate only show unsent instances, false to show all instances.
+   * If absent, defaults to true.
+   */
+  public static final String BUNDLE_SHOW_ONLY_UNSENT =
+      "show_only_unsent_instances";
+  private static final boolean DEFAULT_SHOW_ONLY_UNSENT = true;
 
   private static final int MENU_PREFERENCES = Menu.FIRST;
   private static final int MENU_SHOW_UNSENT = Menu.FIRST + 1;
@@ -111,6 +112,10 @@ public class InstanceUploaderWhatsapp extends ListActivity implements
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_instance_uploader_whatsapp);
+
+    Intent startedIntent = this.getIntent();
+    this.mShowUnsent = startedIntent.getBooleanExtra(BUNDLE_SHOW_ONLY_UNSENT,
+        DEFAULT_SHOW_ONLY_UNSENT);
 
     mUploadButton = (Button) findViewById(R.id.button_send_whatsapp);
     attachListeners();
