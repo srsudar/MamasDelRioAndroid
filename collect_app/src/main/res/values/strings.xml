@@ -410,4 +410,6 @@
   <string name="title_activity_instance_sender_whatsapp">
     InstanceSenderWhatsapp
   </string>
+
+  <string name="default_user_message">I have information.</string>
 </resources>

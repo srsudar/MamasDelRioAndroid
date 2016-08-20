@@ -41,6 +41,7 @@ import org.odk.collect.android.provider.InstanceProviderAPI.InstanceColumns;
 import org.odk.collect.android.tasks.InstanceUploaderTask;
 import org.odk.collect.android.tasks.ParseInstanceFileTask;
 import org.odk.collect.android.utilities.JsonUtil;
+import org.odk.collect.android.utilities.MessageFormatter;
 import org.odk.collect.android.utilities.WebUtils;
 
 import java.util.ArrayList;
@@ -332,12 +333,10 @@ public class InstanceSenderWhatsappActivity extends Activity implements
     mAlertDialog.show();
   }
 
-  @Override
-  public void parsedFile(Uri toUpdate, ContentValues contentValues,
-      Map<String, String> xmlContent) {
-    WhatsappSender sender = new WhatsappSender();
-    JsonUtil jsonUtil = new JsonUtil();
-
+  /**
+   * "Safely" dismiss the dialog.
+   */
+  private void dismissDialogSafely() {
     // Copying this from one of Carl's activities. I'm assuming this Exception
     // is some nonsense about Android's now deprecated way of managing dialogs
     // this way. Leaving the Exception swallowing just because I don't know
@@ -347,15 +346,31 @@ public class InstanceSenderWhatsappActivity extends Activity implements
     } catch (Exception e) {
       // tried to close a dialog not open. don't care.
     }
+  }
 
-    sender.sendMessage(this, jsonUtil.convertMapToJson(xmlContent));
+  @Override
+  public void parsedFile(Uri toUpdate, ContentValues contentValues,
+      Map<String, String> xmlContent) {
+    WhatsappSender sender = new WhatsappSender();
+    JsonUtil jsonUtil = new JsonUtil();
 
-    // Update the data layer to show that we've submitted the form. Unlike the
-    // normal Collect process, we can't receive anything from Whatsapp to say
-    // whether or not it was sent successfully, so we'll just always mark it as
-    // successfully sent if we parsed the file and sent the message.
-//    Collect.getInstance().getContentResolver()
-//        .update(toUpdate, contentValues, null, null);
+    MessageFormatter formatter = new MessageFormatter();
+    String userFriendlyMessage = getString(R.string.default_user_message);
+    String jsonStr  = jsonUtil.convertMapToJson(xmlContent);
+    String finalMessage = formatter.createFinalMessage(userFriendlyMessage,
+        jsonStr);
+
+    sender.sendMessage(this, finalMessage);
+
+    if (xmlContent != null) {
+      // Assume we parsed and sent the data correctly.
+      // Update the data layer to show that we've submitted the form. Unlike the
+      // normal Collect process, we can't receive anything from Whatsapp to say
+      // whether or not it was sent successfully, so we'll just always mark it as
+      // successfully sent if we parsed the file and sent the message.
+//      Collect.getInstance().getContentResolver()
+//          .update(toUpdate, contentValues, null, null);
+    }
     this.finish();
   }
 }

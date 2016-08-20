@@ -36,6 +36,24 @@ public class JsonUtilTest {
   }
 
   @Test
+  public void convertMapToJsonCorrectForBasicCase() {
+    Map<String, String> map = new HashMap<>();
+    map.put("foo", "bar");
+    map.put("name", "Dr. Seuss");
+
+    // This is potentially flaky, as the order of the output in the map is not
+    // specified. I.e. we might get foo or name first in the result depending
+    // on the platform. We may have to adjust this.
+    String expected = "{" +
+        "\"name\":\"Dr. Seuss\"," +
+        "\"foo\":\"bar\"" +
+        "}";
+    String actual = jsonUtil.convertMapToJson(map);
+
+    assertThat(actual).isEqualTo(expected);
+  }
+
+  @Test
   public void parseGeotaggerAsMap() throws Exception {
     // Dead simple, resource-free, XML form one level deep.
     // These keys and values are taken from res/raw/form_geotagger.xml.
