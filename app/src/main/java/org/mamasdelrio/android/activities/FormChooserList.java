@@ -19,6 +19,7 @@ import org.mamasdelrio.android.application.Collect;
 import org.mamasdelrio.android.listeners.DiskSyncListener;
 import org.mamasdelrio.android.provider.FormsProviderAPI.FormsColumns;
 import org.mamasdelrio.android.tasks.DiskSyncTask;
+import org.mamasdelrio.android.utilities.IntentUtil;
 import org.mamasdelrio.android.utilities.VersionHidingCursorAdapter;
 
 import android.app.AlertDialog;
@@ -135,8 +136,9 @@ public class FormChooserList extends ListActivity implements DiskSyncListener {
 
             // Unlike Collect, we want to edit it based on class, not just based
             // on URI.
-            Intent intent = new Intent(Intent.ACTION_EDIT, formUri);
-            intent.setClass(getApplicationContext(), FormEntryActivity.class);
+            IntentUtil intentUtil = new IntentUtil();
+            Intent intent = intentUtil.getFormEntryIntent(
+                getApplicationContext(), formUri);
             startActivity(intent);
         }
 

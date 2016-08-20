@@ -18,6 +18,7 @@ import org.mamasdelrio.android.R;
 import org.mamasdelrio.android.application.Collect;
 import org.mamasdelrio.android.provider.InstanceProviderAPI;
 import org.mamasdelrio.android.provider.InstanceProviderAPI.InstanceColumns;
+import org.mamasdelrio.android.utilities.IntentUtil;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -119,7 +120,12 @@ public class InstanceChooserList extends ListActivity {
             	return;
             }
             // caller wants to view/edit a form, so launch formentryactivity
-            startActivity(new Intent(Intent.ACTION_EDIT, instanceUri));
+            // Unlike Collect, we want to edit it based on class, not just based
+            // on URI.
+            IntentUtil intentUtil = new IntentUtil();
+            Intent intent = intentUtil.getFormEntryIntent(
+                getApplicationContext(), instanceUri);
+            startActivity(intent);
         }
         finish();
     }
