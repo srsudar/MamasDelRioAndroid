@@ -20,6 +20,10 @@ public class ResourceProvider {
     return getFileAsStringSwallowException(context, R.raw.form_widgets);
   }
 
+  public static String getMetaTagXml(Context context) {
+    return getFileAsStringSwallowException(context, R.raw.form_with_meta_tag);
+  }
+
   private static String getFileAsStringSwallowException(
       Context context,
       int resId) {

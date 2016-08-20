@@ -93,6 +93,23 @@ public class JsonUtilTest {
   }
 
   @Test
+  public void getXmlAsMapHandlesMetaTag() throws Exception {
+    Map<String, String> expected = new HashMap<>();
+    // The meta tag generates an empty string. We could ignore this or remove
+    // it, but until we have a reason to do so I'm just going to expect that we
+    // receive that value as well.
+    expected.put("meta", "");
+    expected.put("p3", "2016-08-20");
+    expected.put("string", "some value");
+    expected.put("instanceID", "uuid:203c9b3b-99a3-49ea-bfed-aad90293ddb6");
+
+    String metaTagXml = ResourceProvider.getMetaTagXml(context);
+    Map<String, String> actual = jsonUtil.getXmlAsMap(metaTagXml);
+
+    assertThat(actual).isEqualTo(expected);
+  }
+
+  @Test
   public void getRootElementWorksForGeopoint() throws Exception {
     String xml = ResourceProvider.getGeoTaggerXml(context);
     String expected = "geotagger";
