@@ -31,6 +31,15 @@ public class MessageFormatterTest {
   }
 
   @Test
+  public void getFinalMessageCorrect() {
+    String userFriendlyBody = "Hello everyone. We have a new baby.";
+    String jsonBody = "{fake: 4}";
+    String expected = jsonBody + formatter.getDelimiter() + userFriendlyBody;
+    String actual = formatter.createFinalMessage(userFriendlyBody, jsonBody);
+    assertThat(actual).isEqualTo(expected);
+  }
+
+  @Test
   public void interpolateMessageSimpleCase() throws Exception {
     // A dead simple example as given in the documentation.
     String rawMsg = "Hello ${name}. You are ${age} years old.";

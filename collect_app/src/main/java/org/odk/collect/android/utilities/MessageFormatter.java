@@ -60,6 +60,26 @@ public class MessageFormatter {
   }
 
   /**
+   * Create the final message that will be sent.
+   * @param userFriendlyBody
+   * @param jsonBody
+   * @return
+   */
+  public String createFinalMessage(String userFriendlyBody, String jsonBody) {
+    String result = jsonBody + getDelimiter() + userFriendlyBody;
+    return result;
+  }
+
+  /**
+   * Get the delimiter that separates the user friendly and JSON messages.
+   * @return
+   */
+  public String getDelimiter() {
+    String result = "\n\n-------\n\n";
+    return result;
+  }
+
+  /**
    * Get varName as expected to be referenced in a message.
    * @param varName
    * @return
