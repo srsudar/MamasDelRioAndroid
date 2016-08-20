@@ -184,7 +184,7 @@ public class MainMenuActivity extends Activity {
 				Collect.getInstance().getActivityLogger()
 						.logAction(this, "uploadForms", "click");
 				Intent i = new Intent(getApplicationContext(),
-						InstanceUploaderList.class);
+						InstanceUploaderWhatsapp.class);
 				startActivity(i);
 			}
 		});
