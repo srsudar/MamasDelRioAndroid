@@ -12,11 +12,11 @@
  * the License.
  */
 
-package org.odk.collect.android.tasks;
+package org.mamasdelrio.android.tasks;
 
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.DeleteInstancesListener;
-import org.odk.collect.android.provider.InstanceProviderAPI.InstanceColumns;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.DeleteInstancesListener;
+import org.mamasdelrio.android.provider.InstanceProviderAPI.InstanceColumns;
 
 import android.content.ContentResolver;
 import android.net.Uri;

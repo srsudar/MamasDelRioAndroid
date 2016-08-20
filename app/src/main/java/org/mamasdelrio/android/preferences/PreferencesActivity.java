@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.preferences;
+package org.mamasdelrio.android.preferences;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
@@ -38,10 +38,10 @@ import android.text.InputFilter;
 import android.text.Spanned;
 
 import org.javarosa.core.services.IPropertyManager;
-import org.odk.collect.android.R;
-import org.odk.collect.android.logic.FormController;
-import org.odk.collect.android.logic.PropertyManager;
-import org.odk.collect.android.utilities.MediaUtils;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.logic.FormController;
+import org.mamasdelrio.android.logic.PropertyManager;
+import org.mamasdelrio.android.utilities.MediaUtils;
 
 import java.util.ArrayList;
 

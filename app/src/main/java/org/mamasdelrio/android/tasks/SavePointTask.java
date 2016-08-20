@@ -16,14 +16,14 @@
  * the License.
  */
 
-package org.odk.collect.android.tasks;
+package org.mamasdelrio.android.tasks;
 
 import android.os.AsyncTask;
 import android.util.Log;
 import org.javarosa.core.services.transport.payload.ByteArrayPayload;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.SavePointListener;
-import org.odk.collect.android.logic.FormController;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.SavePointListener;
+import org.mamasdelrio.android.logic.FormController;
 
 import java.io.File;
 

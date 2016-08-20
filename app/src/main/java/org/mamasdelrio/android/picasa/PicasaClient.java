@@ -13,7 +13,7 @@
  */
 
 
-package org.odk.collect.android.picasa;
+package org.mamasdelrio.android.picasa;
 
 import java.io.IOException;
 import java.util.Arrays;

@@ -16,12 +16,12 @@
  * the License.
  */
 
-package org.odk.collect.android.external;
+package org.mamasdelrio.android.external;
 
 import android.util.Log;
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.exception.ExternalDataException;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.exception.ExternalDataException;
 
 import java.io.File;
 import java.util.HashMap;

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.tasks;
+package org.mamasdelrio.android.tasks;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,19 +31,19 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.exception.FormException;
-import org.odk.collect.android.picasa.AlbumEntry;
-import org.odk.collect.android.picasa.AlbumFeed;
-import org.odk.collect.android.picasa.PhotoEntry;
-import org.odk.collect.android.picasa.PicasaClient;
-import org.odk.collect.android.picasa.PicasaUrl;
-import org.odk.collect.android.picasa.UserFeed;
-import org.odk.collect.android.preferences.PreferencesActivity;
-import org.odk.collect.android.provider.FormsProviderAPI.FormsColumns;
-import org.odk.collect.android.provider.InstanceProviderAPI;
-import org.odk.collect.android.provider.InstanceProviderAPI.InstanceColumns;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.exception.FormException;
+import org.mamasdelrio.android.picasa.AlbumEntry;
+import org.mamasdelrio.android.picasa.AlbumFeed;
+import org.mamasdelrio.android.picasa.PhotoEntry;
+import org.mamasdelrio.android.picasa.PicasaClient;
+import org.mamasdelrio.android.picasa.PicasaUrl;
+import org.mamasdelrio.android.picasa.UserFeed;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.provider.FormsProviderAPI.FormsColumns;
+import org.mamasdelrio.android.provider.InstanceProviderAPI;
+import org.mamasdelrio.android.provider.InstanceProviderAPI.InstanceColumns;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 

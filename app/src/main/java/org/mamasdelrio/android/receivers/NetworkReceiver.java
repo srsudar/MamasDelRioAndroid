@@ -1,4 +1,4 @@
-package org.odk.collect.android.receivers;
+package org.mamasdelrio.android.receivers;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,16 +6,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.activities.NotificationActivity;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.InstanceUploaderListener;
-import org.odk.collect.android.preferences.PreferencesActivity;
-import org.odk.collect.android.provider.InstanceProviderAPI;
-import org.odk.collect.android.provider.InstanceProviderAPI.InstanceColumns;
-import org.odk.collect.android.tasks.GoogleSheetsAbstractUploader;
-import org.odk.collect.android.tasks.InstanceUploaderTask;
-import org.odk.collect.android.utilities.WebUtils;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.activities.NotificationActivity;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.InstanceUploaderListener;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.provider.InstanceProviderAPI;
+import org.mamasdelrio.android.provider.InstanceProviderAPI.InstanceColumns;
+import org.mamasdelrio.android.tasks.GoogleSheetsAbstractUploader;
+import org.mamasdelrio.android.tasks.InstanceUploaderTask;
+import org.mamasdelrio.android.utilities.WebUtils;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -61,7 +61,7 @@ public class NetworkReceiver extends BroadcastReceiver implements InstanceUpload
 					uploadForms(context);
 				}
 			}
-		} else if (action.equals("org.odk.collect.android.FormSaved")) {
+		} else if (action.equals("org.mamasdelrio.android.FormSaved")) {
 			ConnectivityManager connectivityManager = (ConnectivityManager) context
 					.getSystemService(Context.CONNECTIVITY_SERVICE);
 			NetworkInfo ni = connectivityManager.getActiveNetworkInfo();
@@ -235,7 +235,7 @@ public class NetworkReceiver extends BroadcastReceiver implements InstanceUpload
                 notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(Collect.getInstance())
-                .setSmallIcon(R.drawable.notes)
+                .setSmallIcon(R.drawable.mamas)
                 .setContentTitle(Collect.getInstance().getString(R.string.odk_auto_note))
                 .setContentIntent(pendingNotify)
                 .setContentText(message.toString().trim())

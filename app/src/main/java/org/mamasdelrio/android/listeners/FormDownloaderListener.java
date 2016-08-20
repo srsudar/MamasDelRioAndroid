@@ -12,11 +12,11 @@
  * the License.
  */
 
-package org.odk.collect.android.listeners;
+package org.mamasdelrio.android.listeners;
 
 import java.util.HashMap;
 
-import org.odk.collect.android.logic.FormDetails;
+import org.mamasdelrio.android.logic.FormDetails;
 
 
 /**

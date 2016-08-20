@@ -12,19 +12,19 @@
  * the License.
  */
 
-package org.odk.collect.android.tasks;
+package org.mamasdelrio.android.tasks;
 
 import org.opendatakit.httpclientandroidlib.client.HttpClient;
 import org.opendatakit.httpclientandroidlib.protocol.HttpContext;
 import org.javarosa.xform.parse.XFormParser;
 import org.kxml2.kdom.Element;
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.FormListDownloaderListener;
-import org.odk.collect.android.logic.FormDetails;
-import org.odk.collect.android.preferences.PreferencesActivity;
-import org.odk.collect.android.utilities.DocumentFetchResult;
-import org.odk.collect.android.utilities.WebUtils;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.FormListDownloaderListener;
+import org.mamasdelrio.android.logic.FormDetails;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.utilities.DocumentFetchResult;
+import org.mamasdelrio.android.utilities.WebUtils;
 
 import android.content.SharedPreferences;
 import android.os.AsyncTask;

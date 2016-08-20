@@ -12,10 +12,10 @@
  * the License.
  */
 
-package org.odk.collect.android.adapters;
+package org.mamasdelrio.android.adapters;
 
-import org.odk.collect.android.logic.HierarchyElement;
-import org.odk.collect.android.views.HierarchyElementView;
+import org.mamasdelrio.android.logic.HierarchyElement;
+import org.mamasdelrio.android.views.HierarchyElementView;
 
 import android.content.Context;
 import android.view.View;

@@ -1,4 +1,4 @@
-package org.odk.collect.android.tasks;
+package org.mamasdelrio.android.tasks;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -6,12 +6,12 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.ParseInstanceFileListener;
-import org.odk.collect.android.provider.InstanceProviderAPI;
-import org.odk.collect.android.provider.InstanceProviderAPI.InstanceColumns;
-import org.odk.collect.android.utilities.Constants;
-import org.odk.collect.android.utilities.JsonUtil;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.ParseInstanceFileListener;
+import org.mamasdelrio.android.provider.InstanceProviderAPI;
+import org.mamasdelrio.android.provider.InstanceProviderAPI.InstanceColumns;
+import org.mamasdelrio.android.utilities.Constants;
+import org.mamasdelrio.android.utilities.JsonUtil;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 

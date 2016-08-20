@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.spatial;
+package org.mamasdelrio.android.spatial;
 
 /**
  * Created by jnordling on 12/29/15.
@@ -30,9 +30,9 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.maps.model.TileOverlayOptions;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
 import org.osmdroid.tileprovider.IRegisterReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.views.MapView;

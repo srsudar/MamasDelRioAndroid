@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.tasks;
+package org.mamasdelrio.android.tasks;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,14 +31,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.InstanceUploaderListener;
-import org.odk.collect.android.logic.PropertyManager;
-import org.odk.collect.android.preferences.PreferencesActivity;
-import org.odk.collect.android.provider.InstanceProviderAPI;
-import org.odk.collect.android.provider.InstanceProviderAPI.InstanceColumns;
-import org.odk.collect.android.utilities.WebUtils;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.InstanceUploaderListener;
+import org.mamasdelrio.android.logic.PropertyManager;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.provider.InstanceProviderAPI;
+import org.mamasdelrio.android.provider.InstanceProviderAPI.InstanceColumns;
+import org.mamasdelrio.android.utilities.WebUtils;
 import org.opendatakit.httpclientandroidlib.Header;
 import org.opendatakit.httpclientandroidlib.HttpResponse;
 import org.opendatakit.httpclientandroidlib.HttpStatus;

@@ -12,11 +12,11 @@
  * the License.
  */
 
-package org.odk.collect.android.tasks;
+package org.mamasdelrio.android.tasks;
 
 import java.io.IOException;
 
-import org.odk.collect.android.listeners.InstanceUploaderListener;
+import org.mamasdelrio.android.listeners.InstanceUploaderListener;
 
 import android.content.Context;
 import android.os.AsyncTask;

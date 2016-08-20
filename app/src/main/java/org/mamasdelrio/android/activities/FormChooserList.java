@@ -12,14 +12,14 @@
  * the License.
  */
 
-package org.odk.collect.android.activities;
+package org.mamasdelrio.android.activities;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.DiskSyncListener;
-import org.odk.collect.android.provider.FormsProviderAPI.FormsColumns;
-import org.odk.collect.android.tasks.DiskSyncTask;
-import org.odk.collect.android.utilities.VersionHidingCursorAdapter;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.DiskSyncListener;
+import org.mamasdelrio.android.provider.FormsProviderAPI.FormsColumns;
+import org.mamasdelrio.android.tasks.DiskSyncTask;
+import org.mamasdelrio.android.utilities.VersionHidingCursorAdapter;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;

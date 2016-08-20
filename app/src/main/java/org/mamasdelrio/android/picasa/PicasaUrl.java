@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.picasa;
+package org.mamasdelrio.android.picasa;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.util.Key;

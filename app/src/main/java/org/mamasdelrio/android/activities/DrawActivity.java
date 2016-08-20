@@ -13,16 +13,16 @@
  * the License.
  */
 
-package org.odk.collect.android.activities;
+package org.mamasdelrio.android.activities;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.utilities.ColorPickerDialog;
-import org.odk.collect.android.utilities.FileUtils;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.utilities.ColorPickerDialog;
+import org.mamasdelrio.android.utilities.FileUtils;
 
 import android.app.Activity;
 import android.app.AlertDialog;

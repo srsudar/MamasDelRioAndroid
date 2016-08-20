@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.activities;
+package org.mamasdelrio.android.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -30,9 +30,9 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.spatial.MapHelper;
-import org.odk.collect.android.widgets.GeoShapeWidget;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.spatial.MapHelper;
+import org.mamasdelrio.android.widgets.GeoShapeWidget;
 import org.osmdroid.DefaultResourceProxyImpl;
 import org.osmdroid.bonuspack.overlays.MapEventsOverlay;
 import org.osmdroid.bonuspack.overlays.MapEventsReceiver;

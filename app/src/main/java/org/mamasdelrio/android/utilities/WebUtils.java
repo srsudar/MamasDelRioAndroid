@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.utilities;
+package org.mamasdelrio.android.utilities;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,9 +29,9 @@ import java.util.zip.GZIPInputStream;
 
 import org.kxml2.io.KXmlParser;
 import org.kxml2.kdom.Document;
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
 import org.opendatakit.httpclientandroidlib.*;
 import org.opendatakit.httpclientandroidlib.auth.AuthScope;
 import org.opendatakit.httpclientandroidlib.auth.Credentials;

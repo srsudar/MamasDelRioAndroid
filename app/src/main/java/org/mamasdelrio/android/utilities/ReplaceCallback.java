@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.utilities;
+package org.mamasdelrio.android.utilities;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.*;

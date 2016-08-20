@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.listeners;
+package org.mamasdelrio.android.listeners;
 
 /**
  * Callback interface invoked upon the completion of a DeleteInstancesTask

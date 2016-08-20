@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.widgets;
+package org.mamasdelrio.android.widgets;
 
 import android.app.Activity;
 import android.content.Context;
@@ -31,12 +31,12 @@ import android.widget.TextView;
 import org.javarosa.core.model.data.IAnswerData;
 import org.javarosa.core.model.data.StringData;
 import org.javarosa.form.api.FormEntryPrompt;
-import org.odk.collect.android.R;
-import org.odk.collect.android.activities.FormEntryActivity;
-import org.odk.collect.android.activities.GeoTraceGoogleMapActivity;
-import org.odk.collect.android.activities.GeoTraceOsmMapActivity;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.activities.FormEntryActivity;
+import org.mamasdelrio.android.activities.GeoTraceGoogleMapActivity;
+import org.mamasdelrio.android.activities.GeoTraceOsmMapActivity;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
 
 import java.util.ArrayList;
 

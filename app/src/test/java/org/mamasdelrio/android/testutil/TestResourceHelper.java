@@ -1,4 +1,4 @@
-package org.odk.collect.android.testutil;
+package org.mamasdelrio.android.testutil;
 
 import android.content.Context;
 

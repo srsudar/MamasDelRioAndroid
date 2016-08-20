@@ -1,4 +1,4 @@
-package org.odk.collect.android.logic;
+package org.mamasdelrio.android.logic;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,13 +6,10 @@ import android.content.Intent;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.odk.collect.android.BuildConfig;
-import org.odk.collect.android.utilities.Constants;
+import org.mamasdelrio.android.BuildConfig;
+import org.mamasdelrio.android.utilities.Constants;
 import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.annotation.Config;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.assertj.android.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;

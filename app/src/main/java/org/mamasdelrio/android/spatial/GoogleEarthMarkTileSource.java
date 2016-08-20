@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.spatial;
+package org.mamasdelrio.android.spatial;
 
 /**
  * @author jonnordling@gmail.com

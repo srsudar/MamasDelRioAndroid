@@ -12,12 +12,12 @@
  * the License.
  */
 
-package org.odk.collect.android.preferences;
+package org.mamasdelrio.android.preferences;
 
 import java.util.ArrayList;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.utilities.UrlUtils;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.utilities.UrlUtils;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;

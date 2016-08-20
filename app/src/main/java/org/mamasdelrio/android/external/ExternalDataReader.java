@@ -16,7 +16,7 @@
  * the License.
  */
 
-package org.odk.collect.android.external;
+package org.mamasdelrio.android.external;
 
 import java.io.File;
 import java.util.Map;

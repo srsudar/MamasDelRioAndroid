@@ -1,4 +1,4 @@
-package org.odk.collect.android.activities;
+package org.mamasdelrio.android.activities;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -16,11 +16,11 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.preferences.PreferencesActivity;
-import org.odk.collect.android.provider.InstanceProviderAPI;
-import org.odk.collect.android.utilities.CompatibilityUtils;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.provider.InstanceProviderAPI;
+import org.mamasdelrio.android.utilities.CompatibilityUtils;
 
 import java.util.ArrayList;
 

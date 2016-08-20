@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.activities;
+package org.mamasdelrio.android.activities;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -45,10 +45,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.spatial.MapHelper;
-import org.odk.collect.android.widgets.GeoShapeWidget;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.spatial.MapHelper;
+import org.mamasdelrio.android.widgets.GeoShapeWidget;
 
 import java.util.ArrayList;
 import java.util.List;

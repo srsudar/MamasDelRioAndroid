@@ -12,10 +12,10 @@
  * the License.
  */
 
-package org.odk.collect.android.activities;
+package org.mamasdelrio.android.activities;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

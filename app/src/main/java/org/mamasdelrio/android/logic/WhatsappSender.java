@@ -1,9 +1,9 @@
-package org.odk.collect.android.logic;
+package org.mamasdelrio.android.logic;
 
 import android.app.Activity;
 import android.content.Intent;
 
-import org.odk.collect.android.utilities.Constants;
+import org.mamasdelrio.android.utilities.Constants;
 
 /**
  * This class prepares intents for starting Whatsapp.

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.activities;
+package org.mamasdelrio.android.activities;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -50,10 +50,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.spatial.MapHelper;
-import org.odk.collect.android.widgets.GeoTraceWidget;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.spatial.MapHelper;
+import org.mamasdelrio.android.widgets.GeoTraceWidget;
 import org.osmdroid.DefaultResourceProxyImpl;
 
 import java.util.ArrayList;

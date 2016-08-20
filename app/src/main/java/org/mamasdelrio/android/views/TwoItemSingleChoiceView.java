@@ -1,4 +1,4 @@
-package org.odk.collect.android.views;
+package org.mamasdelrio.android.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -7,7 +7,7 @@ import android.widget.Checkable;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 
-import org.odk.collect.android.R;
+import org.mamasdelrio.android.R;
 
 /**
  * Created by sudars on 8/19/16.

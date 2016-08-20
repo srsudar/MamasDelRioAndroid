@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.widgets;
+package org.mamasdelrio.android.widgets;
 
 import android.app.Activity;
 import android.content.Context;
@@ -31,15 +31,15 @@ import android.widget.TextView;
 import org.javarosa.core.model.data.GeoPointData;
 import org.javarosa.core.model.data.IAnswerData;
 import org.javarosa.form.api.FormEntryPrompt;
-import org.odk.collect.android.R;
-import org.odk.collect.android.activities.FormEntryActivity;
-import org.odk.collect.android.activities.GeoPointActivity;
-import org.odk.collect.android.activities.GeoPointMapActivity;
-import org.odk.collect.android.activities.GeoPointMapNotDraggableActivity;
-import org.odk.collect.android.activities.GeoPointOsmMapActivity;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.preferences.PreferencesActivity;
-import org.odk.collect.android.utilities.CompatibilityUtils;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.activities.FormEntryActivity;
+import org.mamasdelrio.android.activities.GeoPointActivity;
+import org.mamasdelrio.android.activities.GeoPointMapActivity;
+import org.mamasdelrio.android.activities.GeoPointMapNotDraggableActivity;
+import org.mamasdelrio.android.activities.GeoPointOsmMapActivity;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.utilities.CompatibilityUtils;
 
 import java.text.DecimalFormat;
 

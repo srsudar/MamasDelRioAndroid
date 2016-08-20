@@ -16,7 +16,7 @@
  *
  * @author Jon Nordling (jonnordling@gmail.com)
  */
-package org.odk.collect.android.widgets;
+package org.mamasdelrio.android.widgets;
 
 import android.app.Activity;
 import android.content.Context;
@@ -37,12 +37,12 @@ import org.javarosa.core.model.data.GeoShapeData.GeoShape;
 import org.javarosa.core.model.data.IAnswerData;
 import org.javarosa.core.model.data.StringData;
 import org.javarosa.form.api.FormEntryPrompt;
-import org.odk.collect.android.R;
-import org.odk.collect.android.activities.FormEntryActivity;
-import org.odk.collect.android.activities.GeoShapeGoogleMapActivity;
-import org.odk.collect.android.activities.GeoShapeOsmMapActivity;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.activities.FormEntryActivity;
+import org.mamasdelrio.android.activities.GeoShapeGoogleMapActivity;
+import org.mamasdelrio.android.activities.GeoShapeOsmMapActivity;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
 
 import java.util.ArrayList;
 

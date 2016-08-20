@@ -12,9 +12,9 @@
  * the License.
  */
 
-package org.odk.collect.android.views;
+package org.mamasdelrio.android.views;
 
-import org.odk.collect.android.R;
+import org.mamasdelrio.android.R;
 
 import android.content.Context;
 import android.graphics.Bitmap;

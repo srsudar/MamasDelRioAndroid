@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.utilities;
+package org.mamasdelrio.android.utilities;
 
 import java.io.*;
 import java.security.InvalidAlgorithmParameterException;
@@ -41,11 +41,11 @@ import org.kxml2.io.KXmlSerializer;
 import org.kxml2.kdom.Document;
 import org.kxml2.kdom.Element;
 import org.kxml2.kdom.Node;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.exception.EncryptionException;
-import org.odk.collect.android.logic.FormController.InstanceMetadata;
-import org.odk.collect.android.provider.FormsProviderAPI.FormsColumns;
-import org.odk.collect.android.provider.InstanceProviderAPI.InstanceColumns;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.exception.EncryptionException;
+import org.mamasdelrio.android.logic.FormController.InstanceMetadata;
+import org.mamasdelrio.android.provider.FormsProviderAPI.FormsColumns;
+import org.mamasdelrio.android.provider.InstanceProviderAPI.InstanceColumns;
 
 import android.content.ContentResolver;
 import android.database.Cursor;

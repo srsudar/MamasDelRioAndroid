@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.widgets;
+package org.mamasdelrio.android.widgets;
 
 import android.content.Context;
 import android.util.Log;

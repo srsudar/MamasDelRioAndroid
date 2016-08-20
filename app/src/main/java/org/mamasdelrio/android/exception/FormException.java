@@ -1,4 +1,4 @@
-package org.odk.collect.android.exception;
+package org.mamasdelrio.android.exception;
 
 public class FormException extends Exception {
 

@@ -16,7 +16,7 @@
  * the License.
  */
 
-package org.odk.collect.android.exception;
+package org.mamasdelrio.android.exception;
 
 /**
  *

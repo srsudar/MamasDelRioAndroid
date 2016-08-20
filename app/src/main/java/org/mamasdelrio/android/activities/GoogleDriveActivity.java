@@ -16,7 +16,7 @@
  * @author Carl Hartung (chartung@nafundi.com)
  */
 
-package org.odk.collect.android.activities;
+package org.mamasdelrio.android.activities;
 
 import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
@@ -64,13 +64,13 @@ import com.google.api.services.drive.Drive.Files;
 import com.google.api.services.drive.model.FileList;
 import com.google.api.services.drive.model.ParentList;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.adapters.FileArrayAdapter;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.GoogleDriveFormDownloadListener;
-import org.odk.collect.android.listeners.TaskListener;
-import org.odk.collect.android.logic.DriveListItem;
-import org.odk.collect.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.adapters.FileArrayAdapter;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.GoogleDriveFormDownloadListener;
+import org.mamasdelrio.android.listeners.TaskListener;
+import org.mamasdelrio.android.logic.DriveListItem;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
 
 import java.io.BufferedReader;
 import java.io.File;

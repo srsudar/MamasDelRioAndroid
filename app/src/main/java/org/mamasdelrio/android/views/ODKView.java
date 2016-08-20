@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.views;
+package org.mamasdelrio.android.views;
 
 import java.io.Serializable;
 import java.util.*;
@@ -30,16 +30,16 @@ import org.javarosa.core.model.data.IAnswerData;
 import org.javarosa.core.model.instance.TreeReference;
 import org.javarosa.form.api.FormEntryCaption;
 import org.javarosa.form.api.FormEntryPrompt;
-import org.odk.collect.android.R;
-import org.odk.collect.android.activities.FormEntryActivity;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.exception.ExternalParamsException;
-import org.odk.collect.android.exception.JavaRosaException;
-import org.odk.collect.android.external.ExternalAppsUtils;
-import org.odk.collect.android.logic.FormController;
-import org.odk.collect.android.widgets.IBinaryWidget;
-import org.odk.collect.android.widgets.QuestionWidget;
-import org.odk.collect.android.widgets.WidgetFactory;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.activities.FormEntryActivity;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.exception.ExternalParamsException;
+import org.mamasdelrio.android.exception.JavaRosaException;
+import org.mamasdelrio.android.external.ExternalAppsUtils;
+import org.mamasdelrio.android.logic.FormController;
+import org.mamasdelrio.android.widgets.IBinaryWidget;
+import org.mamasdelrio.android.widgets.QuestionWidget;
+import org.mamasdelrio.android.widgets.WidgetFactory;
 
 import android.content.Context;
 import android.os.Handler;

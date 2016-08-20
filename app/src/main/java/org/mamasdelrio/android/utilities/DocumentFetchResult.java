@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.utilities;
+package org.mamasdelrio.android.utilities;
 
 import org.kxml2.kdom.Document;
  

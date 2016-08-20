@@ -8,7 +8,7 @@
 	OR CONDITIONS OF ANY KIND, either express or implied. See the License for
 	the specific language governing permissions and limitations under the License.
 -->
-<manifest package="org.odk.collect.android"
+<manifest package="org.mamasdelrio.android"
           xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           android:versionCode="1058"
@@ -57,10 +57,10 @@
     -->
 
   <permission
-      android:name="org.odk.collect.android.permission.MAPS_RECEIVE"
+      android:name="org.mamasdelrio.android.permission.MAPS_RECEIVE"
       android:protectionLevel="signature"/>
 
-  <uses-permission android:name="org.odk.collect.android.permission.MAPS_RECEIVE"/>
+  <uses-permission android:name="org.mamasdelrio.android.permission.MAPS_RECEIVE"/>
   <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
 
   <supports-screens
@@ -73,7 +73,7 @@
 
   <application
       android:name=".application.Collect"
-      android:icon="@drawable/notes"
+      android:icon="@drawable/mamas"
       android:installLocation="auto"
       android:label="@string/app_name"
       android:largeHeap="true"
@@ -81,11 +81,11 @@
       android:theme="@style/Collect">
     <provider
         android:name=".provider.FormsProvider"
-        android:authorities="org.odk.collect.android.provider.odk.forms"
+        android:authorities="org.mamasdelrio.android.provider.odk.forms"
         android:exported="true"/>
     <provider
         android:name=".provider.InstanceProvider"
-        android:authorities="org.odk.collect.android.provider.odk.instances"
+        android:authorities="org.mamasdelrio.android.provider.odk.instances"
         android:exported="true"/>
 
     <activity
@@ -262,7 +262,7 @@
         <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
       </intent-filter>
       <intent-filter>
-        <action android:name="org.odk.collect.android.FormSaved"/>
+        <action android:name="org.mamasdelrio.android.FormSaved"/>
       </intent-filter>
     </receiver>
 

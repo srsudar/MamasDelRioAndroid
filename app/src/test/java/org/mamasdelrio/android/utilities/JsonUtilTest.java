@@ -1,13 +1,13 @@
-package org.odk.collect.android.utilities;
+package org.mamasdelrio.android.utilities;
 
 import android.content.Context;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.odk.collect.android.BuildConfig;
-import org.odk.collect.android.testutil.ResourceProvider;
-import org.odk.collect.android.testutil.TestResourceHelper;
+import org.mamasdelrio.android.BuildConfig;
+import org.mamasdelrio.android.testutil.ResourceProvider;
+import org.mamasdelrio.android.testutil.TestResourceHelper;
 import org.robolectric.RobolectricGradleTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
@@ -18,7 +18,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for {@link org.odk.collect.android.utilities.JsonUtil}.
+ * Tests for {@link org.mamasdelrio.android.utilities.JsonUtil}.
  */
 @RunWith(RobolectricGradleTestRunner.class)
 @Config(constants = BuildConfig.class)

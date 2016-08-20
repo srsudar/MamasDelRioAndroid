@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.widgets;
+package org.mamasdelrio.android.widgets;
 
 import android.content.Context;
 import android.text.Editable;
@@ -36,11 +36,11 @@ import org.javarosa.core.model.data.SelectOneData;
 import org.javarosa.core.model.data.helper.Selection;
 import org.javarosa.form.api.FormEntryPrompt;
 import org.javarosa.xpath.expr.XPathFuncExpr;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.external.ExternalDataUtil;
-import org.odk.collect.android.listeners.AudioPlayListener;
-import org.odk.collect.android.utilities.TextUtils;
-import org.odk.collect.android.views.MediaLayout;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.external.ExternalDataUtil;
+import org.mamasdelrio.android.listeners.AudioPlayListener;
+import org.mamasdelrio.android.utilities.TextUtils;
+import org.mamasdelrio.android.views.MediaLayout;
 
 import java.util.ArrayList;
 import java.util.List;

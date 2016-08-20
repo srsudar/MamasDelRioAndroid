@@ -2,7 +2,7 @@
  * 
  */
 
-package org.odk.collect.android.logic;
+package org.mamasdelrio.android.logic;
 
 import org.javarosa.core.reference.Reference;
 

@@ -1,6 +1,6 @@
-package org.odk.collect.android.utilities;
+package org.mamasdelrio.android.utilities;
 
-import org.odk.collect.android.BuildConfig;
+import org.mamasdelrio.android.BuildConfig;
 
 /**
  * Constant values shared across the app.

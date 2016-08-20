@@ -12,9 +12,9 @@
  * the License.
  */
 
-package org.odk.collect.android.preferences;
+package org.mamasdelrio.android.preferences;
 
-import org.odk.collect.android.R;
+import org.mamasdelrio.android.R;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

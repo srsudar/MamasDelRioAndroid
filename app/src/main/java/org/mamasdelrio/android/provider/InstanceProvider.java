@@ -12,13 +12,13 @@
  * the License.
  */
 
-package org.odk.collect.android.provider;
+package org.mamasdelrio.android.provider;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.database.ODKSQLiteOpenHelper;
-import org.odk.collect.android.provider.InstanceProviderAPI.InstanceColumns;
-import org.odk.collect.android.utilities.MediaUtils;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.database.ODKSQLiteOpenHelper;
+import org.mamasdelrio.android.provider.InstanceProviderAPI.InstanceColumns;
+import org.mamasdelrio.android.utilities.MediaUtils;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;

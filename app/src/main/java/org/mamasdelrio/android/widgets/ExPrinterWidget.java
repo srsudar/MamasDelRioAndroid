@@ -12,12 +12,12 @@
  * the License.
  */
 
-package org.odk.collect.android.widgets;
+package org.mamasdelrio.android.widgets;
 
 import org.javarosa.core.model.data.IAnswerData;
 import org.javarosa.form.api.FormEntryPrompt;
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;

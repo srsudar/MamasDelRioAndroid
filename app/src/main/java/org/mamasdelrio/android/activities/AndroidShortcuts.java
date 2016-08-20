@@ -12,12 +12,12 @@
  * the License.
  */
 
-package org.odk.collect.android.activities;
+package org.mamasdelrio.android.activities;
 
 import java.util.ArrayList;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.provider.FormsProviderAPI.FormsColumns;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.provider.FormsProviderAPI.FormsColumns;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -119,7 +119,7 @@ public class AndroidShortcuts extends Activity {
         Intent intent = new Intent();
         intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
         intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, name);
-        Parcelable iconResource = Intent.ShortcutIconResource.fromContext(this, R.drawable.notes);
+        Parcelable iconResource = Intent.ShortcutIconResource.fromContext(this, R.drawable.mamas);
         intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconResource);
 
         // Now, return the result to the launcher

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.spatial;
+package org.mamasdelrio.android.spatial;
 
 /**
  * Created by jnordling on 12/29/15.

@@ -1,4 +1,4 @@
-package org.odk.collect.android.utilities;
+package org.mamasdelrio.android.utilities;
 
 import java.util.Map;
 

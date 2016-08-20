@@ -16,7 +16,7 @@
  *
  * @author Jon Nordling (jonnordling@gmail.com)
  */
-package org.odk.collect.android.spatial;
+package org.mamasdelrio.android.spatial;
 
 import org.osmdroid.ResourceProxy.string;
 import org.osmdroid.tileprovider.MapTile;

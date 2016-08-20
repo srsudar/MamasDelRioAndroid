@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.widgets;
+package org.mamasdelrio.android.widgets;
 
 import android.content.Context;
 import android.content.Intent;
@@ -25,8 +25,8 @@ import android.widget.*;
 import org.javarosa.core.model.data.IAnswerData;
 import org.javarosa.core.model.data.StringData;
 import org.javarosa.form.api.FormEntryPrompt;
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
 
 /**
  * Widget that allows user to open URLs from within the form

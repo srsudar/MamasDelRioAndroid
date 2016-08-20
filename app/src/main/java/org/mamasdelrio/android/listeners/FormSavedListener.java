@@ -12,10 +12,10 @@
  * the License.
  */
 
-package org.odk.collect.android.listeners;
+package org.mamasdelrio.android.listeners;
 
-import org.odk.collect.android.tasks.ProgressNotifier;
-import org.odk.collect.android.tasks.SaveResult;
+import org.mamasdelrio.android.tasks.ProgressNotifier;
+import org.mamasdelrio.android.tasks.SaveResult;
 
 /**
  * @author Carl Hartung (carlhartung@gmail.com)

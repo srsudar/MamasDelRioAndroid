@@ -16,20 +16,20 @@
  * the License.
  */
 
-package org.odk.collect.android.external.handler;
+package org.mamasdelrio.android.external.handler;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import org.javarosa.core.model.SelectChoice;
 import org.javarosa.core.model.condition.EvaluationContext;
 import org.javarosa.xpath.expr.XPathFuncExpr;
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.exception.ExternalDataException;
-import org.odk.collect.android.external.ExternalDataManager;
-import org.odk.collect.android.external.ExternalDataUtil;
-import org.odk.collect.android.external.ExternalSQLiteOpenHelper;
-import org.odk.collect.android.external.ExternalSelectChoice;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.exception.ExternalDataException;
+import org.mamasdelrio.android.external.ExternalDataManager;
+import org.mamasdelrio.android.external.ExternalDataUtil;
+import org.mamasdelrio.android.external.ExternalSQLiteOpenHelper;
+import org.mamasdelrio.android.external.ExternalSelectChoice;
 
 import java.util.*;
 

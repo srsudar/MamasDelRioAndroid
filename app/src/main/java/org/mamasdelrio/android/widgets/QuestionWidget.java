@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.widgets;
+package org.mamasdelrio.android.widgets;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +20,10 @@ import java.util.List;
 import android.text.method.LinkMovementMethod;
 import org.javarosa.core.model.data.IAnswerData;
 import org.javarosa.form.api.FormEntryPrompt;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.AudioPlayListener;
-import org.odk.collect.android.utilities.TextUtils;
-import org.odk.collect.android.views.MediaLayout;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.AudioPlayListener;
+import org.mamasdelrio.android.utilities.TextUtils;
+import org.mamasdelrio.android.views.MediaLayout;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -45,10 +45,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import org.javarosa.core.model.data.IAnswerData;
 import org.javarosa.form.api.FormEntryPrompt;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.AudioPlayListener;
-import org.odk.collect.android.utilities.TextUtils;
-import org.odk.collect.android.views.MediaLayout;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.AudioPlayListener;
+import org.mamasdelrio.android.utilities.TextUtils;
+import org.mamasdelrio.android.views.MediaLayout;
 
 import java.util.ArrayList;
 import java.util.List;

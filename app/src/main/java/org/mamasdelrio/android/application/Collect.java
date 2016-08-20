@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.application;
+package org.mamasdelrio.android.application;
 
 import android.app.Application;
 import android.content.SharedPreferences;
@@ -21,14 +21,14 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.database.ActivityLogger;
-import org.odk.collect.android.external.ExternalDataManager;
-import org.odk.collect.android.logic.FormController;
-import org.odk.collect.android.logic.PropertyManager;
-import org.odk.collect.android.preferences.PreferencesActivity;
-import org.odk.collect.android.utilities.AgingCredentialsProvider;
-import org.odk.collect.android.utilities.PRNGFixes;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.database.ActivityLogger;
+import org.mamasdelrio.android.external.ExternalDataManager;
+import org.mamasdelrio.android.logic.FormController;
+import org.mamasdelrio.android.logic.PropertyManager;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.utilities.AgingCredentialsProvider;
+import org.mamasdelrio.android.utilities.PRNGFixes;
 import org.opendatakit.httpclientandroidlib.client.CookieStore;
 import org.opendatakit.httpclientandroidlib.client.CredentialsProvider;
 import org.opendatakit.httpclientandroidlib.client.protocol.HttpClientContext;

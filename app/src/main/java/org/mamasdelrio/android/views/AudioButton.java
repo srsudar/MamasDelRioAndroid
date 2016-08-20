@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.views;
+package org.mamasdelrio.android.views;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,8 +20,8 @@ import java.io.IOException;
 import org.javarosa.core.model.FormIndex;
 import org.javarosa.core.reference.InvalidReferenceException;
 import org.javarosa.core.reference.ReferenceManager;
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
 
 import android.content.Context;
 import android.graphics.Bitmap;

@@ -15,7 +15,7 @@
 /**
  * @author Jon Nordling (jonnordling@gmail.com)
  */
-package org.odk.collect.android.spatial;
+package org.mamasdelrio.android.spatial;
 
 import org.osmdroid.bonuspack.overlays.Marker;
 import org.osmdroid.views.MapView;

@@ -12,10 +12,10 @@
  * the License.
  */
 
-package org.odk.collect.android.views;
+package org.mamasdelrio.android.views;
 
-import org.odk.collect.android.logic.HierarchyElement;
-import org.odk.collect.android.utilities.TextUtils;
+import org.mamasdelrio.android.logic.HierarchyElement;
+import org.mamasdelrio.android.utilities.TextUtils;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -23,7 +23,7 @@ import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import org.odk.collect.android.widgets.QuestionWidget;
+import org.mamasdelrio.android.widgets.QuestionWidget;
 
 public class HierarchyElementView extends RelativeLayout {
 

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.odk.collect.android.activities;
+package org.mamasdelrio.android.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -31,18 +31,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-import org.odk.collect.android.R;
-import org.odk.collect.android.application.Collect;
-import org.odk.collect.android.listeners.InstanceUploaderListener;
-import org.odk.collect.android.listeners.ParseInstanceFileListener;
-import org.odk.collect.android.logic.WhatsappSender;
-import org.odk.collect.android.preferences.PreferencesActivity;
-import org.odk.collect.android.provider.InstanceProviderAPI.InstanceColumns;
-import org.odk.collect.android.tasks.InstanceUploaderTask;
-import org.odk.collect.android.tasks.ParseInstanceFileTask;
-import org.odk.collect.android.utilities.JsonUtil;
-import org.odk.collect.android.utilities.MessageFormatter;
-import org.odk.collect.android.utilities.WebUtils;
+import org.mamasdelrio.android.R;
+import org.mamasdelrio.android.application.Collect;
+import org.mamasdelrio.android.listeners.InstanceUploaderListener;
+import org.mamasdelrio.android.listeners.ParseInstanceFileListener;
+import org.mamasdelrio.android.logic.WhatsappSender;
+import org.mamasdelrio.android.preferences.PreferencesActivity;
+import org.mamasdelrio.android.provider.InstanceProviderAPI.InstanceColumns;
+import org.mamasdelrio.android.tasks.InstanceUploaderTask;
+import org.mamasdelrio.android.tasks.ParseInstanceFileTask;
+import org.mamasdelrio.android.utilities.JsonUtil;
+import org.mamasdelrio.android.utilities.MessageFormatter;
+import org.mamasdelrio.android.utilities.WebUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;

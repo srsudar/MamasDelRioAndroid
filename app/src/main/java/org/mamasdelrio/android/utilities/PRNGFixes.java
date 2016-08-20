@@ -8,7 +8,7 @@
  * freely, as long as the origin is not misrepresented.
  */
 
-package org.odk.collect.android.utilities;
+package org.mamasdelrio.android.utilities;
 
 import android.os.Build;
 import android.os.Process;
