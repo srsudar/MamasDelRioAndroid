@@ -110,6 +110,17 @@ public class JsonUtilTest {
   }
 
   @Test
+  public void getXmlAsMapHandlesNonAscii() throws Exception {
+    Map<String, String> expected = new HashMap<>();
+    expected.put("name", "Mamás del Río");
+
+    String nonAsciiXml = ResourceProvider.getNonAsciiXml(context);
+    Map<String, String> actual = jsonUtil.getXmlAsMap(nonAsciiXml);
+
+    assertThat(actual).isEqualTo(expected);
+  }
+
+  @Test
   public void getRootElementWorksForGeopoint() throws Exception {
     String xml = ResourceProvider.getGeoTaggerXml(context);
     String expected = "geotagger";

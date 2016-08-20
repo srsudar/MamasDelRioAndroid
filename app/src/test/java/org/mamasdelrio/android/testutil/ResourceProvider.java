@@ -24,6 +24,10 @@ public class ResourceProvider {
     return getFileAsStringSwallowException(context, R.raw.form_with_meta_tag);
   }
 
+  public static String getNonAsciiXml(Context context) {
+    return getFileAsStringSwallowException(context, R.raw.form_non_ascii);
+  }
+
   private static String getFileAsStringSwallowException(
       Context context,
       int resId) {
