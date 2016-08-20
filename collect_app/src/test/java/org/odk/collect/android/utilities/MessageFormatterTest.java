@@ -115,13 +115,14 @@ public class MessageFormatterTest {
   @Test
   public void interpolateMessageHandlesTrickyChars() {
     // Try and create a complicated string.
-    String rawMsg = "in${t}nal $${leave}} is $${cost}";
+    String rawMsg = "in${t}nal $${leave}} is $${cost} and ${${double}}";
     Map<String, String> map = new HashMap<>();
     map.put("t", "ter");
     map.put("leave", "foo");
     map.put("cost", "45");
+    map.put("double", "woot");
 
-    String expected = "internal ${foo} is $45";
+    String expected = "internal $foo} is $45 and ${woot}";
     String actual = formatter.interpolateMessage(rawMsg, map);
 
     assertThat(actual).isEqualTo(expected);
