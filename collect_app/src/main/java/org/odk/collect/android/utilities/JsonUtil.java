@@ -2,6 +2,8 @@ package org.odk.collect.android.utilities;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import org.w3c.dom.Document;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
@@ -26,8 +28,10 @@ public class JsonUtil {
 
   private DocumentBuilderFactory builderFactory;
   private DocumentBuilder builder;
+  private Gson gson;
 
   public JsonUtil() {
+    gson = new Gson();
     builderFactory =
         DocumentBuilderFactory.newInstance();
     try {
@@ -37,10 +41,19 @@ public class JsonUtil {
     }
   }
 
-  public Map<String, String> parse(InputSource inputSource) throws SAXException, IOException, ParserConfigurationException {
+  public Map<String, String> parse(InputSource inputSource) throws SAXException,
+      IOException, ParserConfigurationException {
     final DataCollector handler = new DataCollector();
     SAXParserFactory.newInstance().newSAXParser().parse(inputSource, handler);
     return handler.result;
+  }
+
+  /**
+   * Convert map to a JSON object string.
+   */
+  public String convertMapToJson(Map<String, String> map) {
+    String result = gson.toJson(map);
+    return result;
   }
 
   /**

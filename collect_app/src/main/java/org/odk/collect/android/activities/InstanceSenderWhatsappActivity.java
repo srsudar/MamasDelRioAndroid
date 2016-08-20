@@ -40,6 +40,7 @@ import org.odk.collect.android.preferences.PreferencesActivity;
 import org.odk.collect.android.provider.InstanceProviderAPI.InstanceColumns;
 import org.odk.collect.android.tasks.InstanceUploaderTask;
 import org.odk.collect.android.tasks.ParseInstanceFileTask;
+import org.odk.collect.android.utilities.JsonUtil;
 import org.odk.collect.android.utilities.WebUtils;
 
 import java.util.ArrayList;
@@ -335,6 +336,7 @@ public class InstanceSenderWhatsappActivity extends Activity implements
   public void parsedFile(Uri toUpdate, ContentValues contentValues,
       Map<String, String> xmlContent) {
     WhatsappSender sender = new WhatsappSender();
+    JsonUtil jsonUtil = new JsonUtil();
 
     // Copying this from one of Carl's activities. I'm assuming this Exception
     // is some nonsense about Android's now deprecated way of managing dialogs
@@ -346,7 +348,7 @@ public class InstanceSenderWhatsappActivity extends Activity implements
       // tried to close a dialog not open. don't care.
     }
 
-    sender.sendMessage(this, sender.toString());
+    sender.sendMessage(this, jsonUtil.convertMapToJson(xmlContent));
 
     // Update the data layer to show that we've submitted the form. Unlike the
     // normal Collect process, we can't receive anything from Whatsapp to say

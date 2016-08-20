@@ -3,12 +3,7 @@ package org.odk.collect.android.logic;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.google.gson.Gson;
-
 import org.odk.collect.android.utilities.Constants;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * This class prepares intents for starting Whatsapp.
@@ -41,14 +36,6 @@ public class WhatsappSender {
   }
 
   public void sendMessage(Activity activity, String message) {
-    Map<String, Object> map = new HashMap<>();
-    Gson gson = new Gson();
-    String jsonMessage = gson.toJson(map);
-
-    String msg =
-        Constants.MSG_DELIMITER +
-        jsonMessage;
-
     Intent intent = getShareIntent(message);
     activity.startActivityForResult(intent,
         Constants.RequestCodes.SEND_TO_WHATSAPP);

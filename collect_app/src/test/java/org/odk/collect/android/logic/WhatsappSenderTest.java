@@ -49,12 +49,8 @@ public class WhatsappSenderTest {
   @Test
   public void sendMessageTest() {
     Activity activityMock = mock(Activity.class);
-    WhatsappSender.MessageRecipient recipient =
-        WhatsappSender.MessageRecipient.GROUP;
-    Map<String, Object> emptyMap = new HashMap<>();
-
-    sender.sendMessage(activityMock);
-
+    String message = "fancy message";
+    sender.sendMessage(activityMock, message);
     verify(activityMock, times(1)).startActivityForResult(any(Intent.class),
         eq(Constants.RequestCodes.SEND_TO_WHATSAPP));
   }
