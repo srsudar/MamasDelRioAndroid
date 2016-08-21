@@ -29,10 +29,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.mamasdelrio.android.R;
 import org.mamasdelrio.android.application.Collect;
 import org.mamasdelrio.android.listeners.ParseInstanceFileListener;
+import org.mamasdelrio.android.logic.InstanceDataProcessor;
 import org.mamasdelrio.android.logic.WhatsappSender;
 import org.mamasdelrio.android.preferences.PreferencesActivity;
 import org.mamasdelrio.android.tasks.ParseInstanceFileTask;
@@ -347,8 +349,16 @@ public class InstanceSenderWhatsappActivity extends Activity implements
     JsonUtil jsonUtil = new JsonUtil();
 
     MessageFormatter formatter = new MessageFormatter();
-    String userFriendlyMessage = getString(R.string.default_user_message);
-    String jsonStr  = jsonUtil.convertMapToJson(xmlContent);
+    InstanceDataProcessor processor = new InstanceDataProcessor(xmlContent);
+
+    String defaultMessage = getString(R.string.default_user_message);
+    String messageTemplate = processor.getMessageTemplate(defaultMessage);
+    String userFriendlyMessage = formatter.interpolateMessage(messageTemplate,
+        xmlContent);
+
+    Map<String, String> processedMap = processor.filterForSend();
+    String jsonStr  = jsonUtil.convertMapToJson(processedMap);
+
     String finalMessage = formatter.createFinalMessage(userFriendlyMessage,
         jsonStr);
 
@@ -362,6 +372,7 @@ public class InstanceSenderWhatsappActivity extends Activity implements
       // successfully sent if we parsed the file and sent the message.
 //      Collect.getInstance().getContentResolver()
 //          .update(toUpdate, contentValues, null, null);
+      Toast.makeText(this, "not yet marking saved", Toast.LENGTH_SHORT).show();
     }
     this.finish();
   }
