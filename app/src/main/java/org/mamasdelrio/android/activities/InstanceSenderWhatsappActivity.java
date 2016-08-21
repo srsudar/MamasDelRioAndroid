@@ -370,9 +370,10 @@ public class InstanceSenderWhatsappActivity extends Activity implements
       // normal Collect process, we can't receive anything from Whatsapp to say
       // whether or not it was sent successfully, so we'll just always mark it as
       // successfully sent if we parsed the file and sent the message.
-//      Collect.getInstance().getContentResolver()
-//          .update(toUpdate, contentValues, null, null);
-      Toast.makeText(this, "not yet marking saved", Toast.LENGTH_SHORT).show();
+      Collect.getInstance().getContentResolver()
+          .update(toUpdate, contentValues, null, null);
+      // We use this toast so we don't forget to re-enable it.
+      // Toast.makeText(this, "not yet marking saved", Toast.LENGTH_SHORT).show();
     }
     this.finish();
   }

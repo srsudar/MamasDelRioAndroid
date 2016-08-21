@@ -15,10 +15,15 @@ android {
         targetSdkVersion(21)
         versionCode(2)
         versionName("1.0.0")
+
+        // Enabling multidex supoprt, as we apparently have too many methods to
+        // generate a signed apk.
+        multiDexEnabled true
     }
 
     dexOptions {
         incremental true
+        javaMaxHeapSize "4g"
     }
 
     buildTypes {
