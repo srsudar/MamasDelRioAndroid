@@ -22,7 +22,6 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -33,23 +32,16 @@ import android.widget.EditText;
 
 import org.mamasdelrio.android.R;
 import org.mamasdelrio.android.application.Collect;
-import org.mamasdelrio.android.listeners.InstanceUploaderListener;
 import org.mamasdelrio.android.listeners.ParseInstanceFileListener;
 import org.mamasdelrio.android.logic.WhatsappSender;
 import org.mamasdelrio.android.preferences.PreferencesActivity;
-import org.mamasdelrio.android.provider.InstanceProviderAPI.InstanceColumns;
-import org.mamasdelrio.android.tasks.InstanceUploaderTask;
 import org.mamasdelrio.android.tasks.ParseInstanceFileTask;
 import org.mamasdelrio.android.utilities.JsonUtil;
-import org.mamasdelrio.android.utilities.MessageFormatter;
+import org.mamasdelrio.android.logic.MessageFormatter;
 import org.mamasdelrio.android.utilities.WebUtils;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Activity to send forms via Whatsapp.

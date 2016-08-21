@@ -1,4 +1,4 @@
-package org.mamasdelrio.android.utilities;
+package org.mamasdelrio.android.logic;
 
 import java.util.Map;
 

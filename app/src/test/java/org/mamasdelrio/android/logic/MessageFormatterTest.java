@@ -1,15 +1,11 @@
-package org.mamasdelrio.android.utilities;
-
-import android.content.Context;
+package org.mamasdelrio.android.logic;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mamasdelrio.android.BuildConfig;
-import org.mamasdelrio.android.testutil.ResourceProvider;
-import org.mamasdelrio.android.testutil.TestResourceHelper;
+import org.mamasdelrio.android.logic.MessageFormatter;
 import org.robolectric.RobolectricGradleTestRunner;
-import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
 import java.util.HashMap;
@@ -18,7 +14,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Tests for {@link org.mamasdelrio.android.utilities.MessageFormatter}.
+ * Tests for {@link MessageFormatter}.
  */
 @RunWith(RobolectricGradleTestRunner.class)
 @Config(constants = BuildConfig.class)
