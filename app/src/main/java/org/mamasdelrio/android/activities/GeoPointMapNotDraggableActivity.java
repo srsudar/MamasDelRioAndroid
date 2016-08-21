@@ -30,6 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -52,7 +53,8 @@ import java.util.List;
  * @author guisalmon@gmail.com
  *
  */
-public class GeoPointMapNotDraggableActivity extends FragmentActivity implements LocationListener {
+public class GeoPointMapNotDraggableActivity extends FragmentActivity implements
+		LocationListener, OnMapReadyCallback {
 
 	private static final String LOCATION_COUNT = "locationCount";
 
@@ -290,39 +292,18 @@ public class GeoPointMapNotDraggableActivity extends FragmentActivity implements
     }
 
 
-    @Override
-    protected void onResume() {
-        super.onResume();
+	@Override
+	protected void onResume() {
+		super.onResume();
 
-		if ( mMap == null ) {
-			mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-			mHelper = new MapHelper(this,mMap);
-			mHelper.setBasemap();
+		if (mMap == null) {
+			((SupportMapFragment) getSupportFragmentManager()
+					.findFragmentById(R.id.map)).getMapAsync(this);
+		}
 
-      if ( mMap == null ) {
-          Toast.makeText(getBaseContext(), getString(R.string.google_play_services_error_occured),
-                  Toast.LENGTH_SHORT).show();
-          finish();
-          return;
-      }
-
-      // clear-value action is handled by widget.
-
-			/*Zoom only if there's a previous location*/
-			if (mLatLng != null){
-				mMarkerOption.position(mLatLng);
-				mMarker = mMap.addMarker(mMarkerOption);
-				mMarker.setDraggable(mCaptureLocation);
-                mZoomed = true;
-				mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng, 16));
-			}
-
-            mShowLocation.setClickable(mMarker != null);
-        }
-
-		if ( mRefreshLocation ) {
+		if (mRefreshLocation) {
 			mLocationStatus.setVisibility(View.VISIBLE);
-	        if (mGPSOn) {
+			if (mGPSOn) {
 				mLocationManager.requestLocationUpdates(
 						LocationManager.GPS_PROVIDER, 0, 0, this);
 			}
@@ -330,8 +311,8 @@ public class GeoPointMapNotDraggableActivity extends FragmentActivity implements
 				mLocationManager.requestLocationUpdates(
 						LocationManager.NETWORK_PROVIDER, 0, 0, this);
 			}
-        }
-    }
+		}
+	}
 
 
     @Override
@@ -401,4 +382,31 @@ public class GeoPointMapNotDraggableActivity extends FragmentActivity implements
     public void onStatusChanged(String provider, int status, Bundle extras) {
     }
 
+	@Override
+	public void onMapReady(GoogleMap googleMap) {
+		// TODO: verify this works at runtime.
+		mMap = googleMap;
+		mHelper = new MapHelper(this, mMap);
+		mHelper.setBasemap();
+
+		if (mMap == null) {
+			Toast.makeText(getBaseContext(), getString(R.string.google_play_services_error_occured),
+					Toast.LENGTH_SHORT).show();
+			finish();
+			return;
+		}
+
+		// clear-value action is handled by widget.
+
+		/*Zoom only if there's a previous location*/
+		if (mLatLng != null) {
+			mMarkerOption.position(mLatLng);
+			mMarker = mMap.addMarker(mMarkerOption);
+			mMarker.setDraggable(mCaptureLocation);
+			mZoomed = true;
+			mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng, 16));
+		}
+
+		mShowLocation.setClickable(mMarker != null);
+	}
 }

@@ -41,6 +41,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerDragListener;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
@@ -71,7 +72,9 @@ import java.util.concurrent.TimeUnit;
  * @author jonnordling@gmail.com
  *
  */
-public class GeoTraceGoogleMapActivity extends FragmentActivity implements LocationListener, OnMarkerDragListener, OnMapLongClickListener {
+public class GeoTraceGoogleMapActivity extends FragmentActivity implements
+		LocationListener, OnMarkerDragListener, OnMapLongClickListener,
+		OnMapReadyCallback {
 	private ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 	private ScheduledFuture schedulerHandler;
 	private Button play_button;
@@ -138,20 +141,8 @@ public class GeoTraceGoogleMapActivity extends FragmentActivity implements Locat
 		setContentView(R.layout.geotrace_google_layout);
 
 		mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.gmap)).getMap();
-		mHelper = new MapHelper(this,mMap);
-		mMap.setMyLocationEnabled(true);
-		mMap.setOnMapLongClickListener(this);
-		mMap.setOnMarkerDragListener(this);
-		mMap.getUiSettings().setZoomControlsEnabled(true);
-		mMap.getUiSettings().setMyLocationButtonEnabled(false);
-		mMap.getUiSettings().setZoomControlsEnabled(false);
-
-		polylineOptions = new PolylineOptions();
-		polylineOptions.color(Color.RED);
-
-
-
+		((SupportMapFragment) getSupportFragmentManager()
+				.findFragmentById(R.id.gmap)).getMapAsync(this);
 
 		clear_button= (Button) findViewById(R.id.clear);
 		clear_button.setOnClickListener(new View.OnClickListener() {
@@ -837,4 +828,19 @@ public class GeoTraceGoogleMapActivity extends FragmentActivity implements Locat
 	}
 
 
+	@Override
+	public void onMapReady(GoogleMap googleMap) {
+		// TODO: verify this runs, not just compiles
+		mMap = googleMap;
+		mHelper = new MapHelper(this,mMap);
+		mMap.setMyLocationEnabled(true);
+		mMap.setOnMapLongClickListener(this);
+		mMap.setOnMarkerDragListener(this);
+		mMap.getUiSettings().setZoomControlsEnabled(true);
+		mMap.getUiSettings().setMyLocationButtonEnabled(false);
+		mMap.getUiSettings().setZoomControlsEnabled(false);
+
+		polylineOptions = new PolylineOptions();
+		polylineOptions.color(Color.RED);
+	}
 }
