@@ -4,3 +4,6 @@ build
 local.properties
 *.iml
 .DS_Store
+
+# for analytics. File held privately between developers.
+google-services.json

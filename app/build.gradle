@@ -52,6 +52,7 @@ allprojects {
 dependencies {
     compile fileTree(include: '*.jar', dir: 'libs')
     compile 'com.google.android.gms:play-services:9.4.0'
+    compile 'com.google.android.gms:play-services-analytics:9.4.0'
     // Testing-only dependencies
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:1.7.1'
@@ -62,3 +63,8 @@ dependencies {
     testCompile 'org.mockito:mockito-core:1.9.5'
     testCompile 'org.robolectric:robolectric:3.1'
 }
+
+// This site says we should apply this plugin at the bottom of our build.gradle,
+// though this is odd.
+// https://developers.google.com/analytics/devguides/collection/android/v4/
+apply plugin: 'com.google.gms.google-services'
