@@ -58,6 +58,7 @@ dependencies {
     compile fileTree(include: '*.jar', dir: 'libs')
     compile 'com.google.android.gms:play-services:9.4.0'
     compile 'com.google.android.gms:play-services-analytics:9.4.0'
+    compile 'com.android.support:multidex:1.0.1'
     // Testing-only dependencies
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:1.7.1'

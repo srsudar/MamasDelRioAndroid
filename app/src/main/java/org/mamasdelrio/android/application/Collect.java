@@ -15,11 +15,13 @@
 package org.mamasdelrio.android.application;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.support.multidex.MultiDex;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
@@ -165,13 +167,19 @@ public class Collect extends Application {
     }
   }
 
-  /**
-   * Predicate that tests whether a directory path might refer to an
-   * ODK Tables instance data directory (e.g., for media attachments).
-   *
-   * @param directory
-   * @return
-   */
+  @Override
+  protected void attachBaseContext(Context base) {
+    super.attachBaseContext(base);
+    MultiDex.install(this);
+  }
+
+    /**
+     * Predicate that tests whether a directory path might refer to an
+     * ODK Tables instance data directory (e.g., for media attachments).
+     *
+     * @param directory
+     * @return
+     */
   public static boolean isODKTablesInstanceDataDirectory(File directory) {
     /**
      * Special check to prevent deletion of files that
