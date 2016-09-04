@@ -1,0 +1,19 @@
+language: android
+
+jdk:
+  - oraclejdk7
+  - oraclejdk8
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-23.0.3
+    - android-23
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - addon-google_apis-google-23
+
+script:
+    - ./gradlew clean assemble install compileTest --info --stacktrace
+    - ./gradlew test --continue --info --stacktrace
