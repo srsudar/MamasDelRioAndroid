@@ -1,0 +1,14 @@
+<?xml version='1.0' ?>
+<widgets id="widgets">
+  <start>2016-08-18T19:18:46.922-07</start>
+  <deviceid>867979021299992</deviceid>
+  <string>string value</string>
+  <int>9</int>
+  <decimal>18.31</decimal>
+  <date>2018-06-15</date>
+  <select>a d</select>
+  <select1>3</select1>
+  <regex>test@test.com</regex>
+  <leftblank/>
+  <geopoint>47.65830366 -122.31297098 121.0 16.0</geopoint>
+</widgets>

@@ -1,8 +1,9 @@
-*.iml
+build
 .gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
+.idea
+local.properties
+*.iml
 .DS_Store
-/build
-/captures
+
+# for analytics. File held privately between developers.
+google-services.json

@@ -1,0 +1,8 @@
+<?xml version='1.0' ?>
+<basic_interp id="basic_interp">
+  <p3>2016-08-20</p3>
+  <string>some value</string>
+  <meta>
+    <instanceID>uuid:203c9b3b-99a3-49ea-bfed-aad90293ddb6</instanceID>
+  </meta>
+</basic_interp>
