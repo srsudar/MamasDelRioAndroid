@@ -1,6 +1,7 @@
 language: android
 jdk:
 - oraclejdk7
+sudo: required
 android:
   components:
   - tools
