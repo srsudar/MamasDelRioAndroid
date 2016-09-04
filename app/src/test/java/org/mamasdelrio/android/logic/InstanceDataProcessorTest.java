@@ -70,6 +70,7 @@ public class InstanceDataProcessorTest {
 
     String actual = processor.getMessageTemplate("should not be me");
     assertThat(actual).isEqualTo(expected);
+    assertThat(actual).isEqualTo(null);
   }
 
   @Test
