@@ -2,6 +2,8 @@
 
 > The Android component of Mamás del Río
 
+[![Build
+Status](https://travis-ci.org/srsudar/MamasDelRioAndroid.svg?branch=master)](https://travis-ci.org/srsudar/MamasDelRioAndroid)
 
 ## Overview
 
